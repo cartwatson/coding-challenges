@@ -13,11 +13,12 @@ def main():
         time = get_numerical_input("How long ago did you have it (hours)? ")
         drinks.append((caffeine, time))
         done = not get_y_n_input("Did you have more caffeine? (y/n) ")
+        print()
         if done:
             break
-        print()
     
-    print("You currently have: " + str(round(calculate_caffeine(drinks, CAFFEINE_HALFLIFE), 2)) + "mg of caffeine in your system")
+    print("You currently have: " + str(round(calculate_caffeine(drinks, CAFFEINE_HALFLIFE), 2)) + "mg of caffeine in your system\n")
+
     # graph
     if (get_y_n_input("Would you like a graph of your caffeine intake? ")):
         (x, y) = calculate_caffeine_over_time(drinks, CAFFEINE_HALFLIFE, TIME_INCREMENT)
@@ -27,6 +28,9 @@ def main():
         plt.ylabel("Caffeine (mg)")
         plt.title("Caffeine Intake")
         plt.show()
+        print()
+
+    print("Thanks for checking your caffeine levels! Stay safe!")
 
 
 def get_numerical_input(message):
