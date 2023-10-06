@@ -140,8 +140,8 @@ def process_rankings(filename:str, contestants_list:list[Contestant]):
 # Assumes 'contestants.txt' and 'rankings.txt' exist and are correctly formatted
 def main():
     print("{:<}  {:^27}  {:>}".format("🌹❤", "Bachelor Score Generator", "❤🌹"))
-    contestants = read_contestants("contestants.txt")
-    scores = process_rankings("rankings.txt", contestants)
+    contestants = read_contestants("golden-bachelor-23-contestants.txt")
+    scores = process_rankings("golden-bachelor-23-rankings.txt", contestants)
     print("{:<12}  {:<12}  {:<12}".format("Name", "Max Score", "Min Score"))
     for owner, scores in scores.items():
         print("{:<12}  {:<12}  {:<12}".format(owner, scores[0], scores[1]))
